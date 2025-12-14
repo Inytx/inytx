@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INYTX // SYSTEM</title>
+    <!-- Tailwind CSS (Pour la prod, on utiliserait npm install tailwindcss, mais le CDN est OK pour le dev rapide) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              tron: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                200: '#99f6e4',
+                300: '#5eead4',
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+                700: '#0f766e',
+                800: '#115e59',
+                900: '#020405', // Deep dark background
+                accent: '#00f0ff', // classic Tron Cyan
+              }
+            },
+            fontFamily: {
+              display: ['"Orbitron"', 'sans-serif'],
+              mono: ['"Share Tech Mono"', 'monospace'],
+              body: ['"Rajdhani"', 'sans-serif'],
+            },
+            backgroundImage: {
+              'grid-pattern': "radial-gradient(circle, #0d9488 1px, transparent 1px)",
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Fonts: Orbitron for headers, Rajdhani for UI, Share Tech Mono for code/numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #020405;
+        color: #e2e8f0;
+      }
+      /* Custom Scrollbar for Tron look */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020405; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0f766e; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00f0ff; 
+      }
+      .tron-glow {
+        text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+      }
+      .box-glow {
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- C'est cette ligne qui permet à Vite de lancer ton application React -->
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
